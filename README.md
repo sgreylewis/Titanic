@@ -90,27 +90,20 @@ which columns to drop so that I don't have too much co-linearity between feature
 
 ## Model Selection and Parameter Selection
 
-#the select_features function uses a RandomForestClassifier to get the best features
-optimized_columns = select_features(train)
-grid_searched = select_model_tune(train, optimized_columns)
-#without taking out any columns before optimizing, we got a 83.7% on the RandomForestClassifier
-best_rf_model = grid_searched[2]['best_estimator']
-create_submission(best_rf_model,optimized_columns,filename = 'submission_final.csv')
-
-
-
-for df in [train,holdout]:
-    df = df.drop(['Pclass','Name','Sex','Sex_male','Age','Age_categories',
-                'Fare_categories','Fare_categories','Cabin_type','SibSp',
-                'SibSp_scaled','Parch','Parch_scaled','Sib_Parch','Fare',
-                'Fare_scaled','Cabin','Embarked','Title'], axis = 1, inplace = True)
-
-optimized_columns = select_features(train)
-grid_searched = select_model_tune(train, optimized_columns)
-#this got a best of 82.9% on the RandomForestClassifier so I might choose to
-keep all the columns anyway, though I am afraid that I'm overfitting.
-'''
+I am looking to predict whether a passenger on the Titanic survived or did not survive;
+therefore I created models using basic classification algorithms, such as logistic
+regression, k-nearest neighbors, and random forests.  Using my select_model_tune
+function, I did cross validation on the three models while gridsearching over a
+range of parameters and found that the Random Forest Classifier gave the highest
+accuracy score; therefore I used the Random Forest Classifier to get the optimized
+columns that I would feed to my final Random Forest Classifier model.  
 
 ## Results
+
+My final model gave me a best score of 83.7% so I used to make predictions on the
+test data; when I submitted my data to Kaggle, my predictions were shown to be 77%
+accurate.  
+
+## Next Steps
 
 ## References
