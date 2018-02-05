@@ -124,8 +124,8 @@ def create_submission(model, columns, filename='submission.csv'):
     submission.to_csv(filename, index = False)
 
 if __name__ == '__main__':
-    holdout = pd.read_csv("test.csv")
-    train = pd.read_csv('train.csv')
+    holdout = pd.read_csv('../data/test.csv')
+    train = pd.read_csv('../data/train.csv')
     '''
     #plot_pivot_survived(train, 'Sex')
     this shows that females survived in much higher proportions than males did, which
