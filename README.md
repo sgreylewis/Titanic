@@ -106,4 +106,15 @@ accurate.
 
 ## Next Steps
 
+I imagine that I may have overfit my model on my training data since the accuracy
+score for my training data was 6% higher than my accuracy score for my test data.
+The best part about Kaggle competitions is that I can keep working on my model;
+there is no limit to the number of times I can submit a new set of predictions on
+the test data.  I will keep working to make my model better by changing its parameters
+to make it more generalizable , reviewing my function that gets optimized columns,
+and getting hints from models submitted by other users.  
+
 ## References
+
+I received a lot of guidance for this competition from the Kaggle Fundamentals course,
+which is a part of [Dataquest's online Data Science class](www.dataquest.io).
